@@ -622,6 +622,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 calculateOffsets()
                 setNeedsDisplay()
             }
+            delegate?.chartTouchEnded?(self)
         }
         else if recognizer.state == NSUIGestureRecognizerState.changed
         {
@@ -786,6 +787,7 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 _outerScrollView?.nsuiIsScrollEnabled = true
                 _outerScrollView = nil
             }
+            delegate?.chartTouchEnded?(self)
         }
     }
     
